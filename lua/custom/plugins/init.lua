@@ -4,12 +4,11 @@
 -- See the kickstart.nvim README for more information
 return {
 	{
-		"danymat/neogen", 
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		config = function() 
-			require('neogen').setup({ snippet_engine = "luasnip" })
-		end
-		-- Uncomment next line if you want to follow only stable versions
-		--     -- version = "*" 
+		-- Not useful as friendly-snippet already has documentation snippets for C/CPP languages
+		-- "danymat/neogen", 
+		-- dependencies = "nvim-treesitter/nvim-treesitter",
+		-- config = function() 
+		-- 	require('neogen').setup({ snippet_engine = "luasnip" })
+		-- end
 	}
 }

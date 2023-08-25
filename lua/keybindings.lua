@@ -72,7 +72,8 @@ keymap('n', '<F11>', ':cgete system(\'cmake --build build -j\')<CR>:copen<CR>', 
 
 
 -- Add keybinding to generate documentation automatically
-keymap('n', '<Leader>@', ':Neogen<CR>', opts)
+-- Not useful as friendly-snippet already has documentation snippets for C/CPP languages
+-- keymap('n', '<Leader>@', ':Neogen<CR>', opts)
 
 -- Escape from terminal mode 
 keymap('t', '<Esc>', '<C-\\><C-n>', opts)

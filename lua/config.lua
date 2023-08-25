@@ -30,3 +30,8 @@ vim.opt.listchars = {
 
 -- Help on other options
 -- 
+--
+-- Add documentation snippets from friendly-snippets
+require'luasnip'.filetype_extend("cpp", {"cppdoc"})
+require'luasnip'.filetype_extend("c", {"cdoc"})
+
