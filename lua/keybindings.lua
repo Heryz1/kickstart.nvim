@@ -4,7 +4,7 @@
 local keymap               = vim.api.nvim_set_keymap
 local opts                 = { noremap = true }
 --
-keymap('i', 'kj', '<esc>', opts) -- jk retourne en mode normal
+-- keymap('i', 'kj', '<esc>', opts) -- jk retourne en mode normal
 -- keymap('n', '<c-j>', '<c-w>j', opts) -- ctrl-j permet de passer a l'autre split
 -- keymap('n', '<c-k>', '<c-w>k', opts) -- ctrl-k permet de passer a l'autre split
 -- keymap('n', '<c-h>', '<c-w>h', opts) -- ctrl-k permet de passer a l'autre split
@@ -62,4 +62,17 @@ keymap('n', '<Leader>Wz', 'viW*#:setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getl
 --   keymap('i', 'kj', '<esc>', opts) -- Retourne en mode normal avec kj
 --
 keymap('i', '<C-x>', '<esc>lce', opts) -- En mode insertion, supprime le mot suivant 
---
+
+-- Add keybinding to call .build.sh function if <c-b> is pushed
+keymap('n', '<C-b>', ':cgete system(\'./build.sh\')<CR>:copen<CR>', opts)
+
+-- Add keybinding to call cmake when <F12> : Build cmake project and compile project 
+keymap('n', '<F12>', ':cgete system(\'cmake -B build\')<CR>:copen<CR>', opts)
+keymap('n', '<F11>', ':cgete system(\'cmake --build build -j\')<CR>:copen<CR>', opts)
+
+
+-- Add keybinding to generate documentation automatically
+keymap('n', '<Leader>@', ':Neogen<CR>', opts)
+
+-- Escape from terminal mode 
+keymap('t', '<Esc>', '<C-\\><C-n>', opts)
