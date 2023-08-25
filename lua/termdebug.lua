@@ -1,0 +1,3 @@
+-- Termdebug builtin plugin settings_split_by_newlineebug]])
+-- vim.g.termdebug_wide       = 163
+-- vim.g.termdebug_use_prompt = 1
