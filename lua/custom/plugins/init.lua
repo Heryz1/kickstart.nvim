@@ -10,5 +10,15 @@ return {
 		-- config = function() 
 		-- 	require('neogen').setup({ snippet_engine = "luasnip" })
 		-- end
+		{
+			"m4xshen/hardtime.nvim",
+			dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+			opts = {}
+		},
+		{
+			'tzachar/highlight-undo.nvim',
+			opts = {
+			},
+		},
 	}
 }

@@ -522,6 +522,8 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+require'luasnip'.filetype_extend("cpp", {"cppdoc"})
+require'luasnip'.filetype_extend("c", {"cdoc"})
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
