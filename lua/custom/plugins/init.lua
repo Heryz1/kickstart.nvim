@@ -20,5 +20,9 @@ return {
 			opts = {
 			},
 		},
+		{
+			'skywind3000/asyncrun.vim',
+			-- opts = {},
+		},
 	}
 }
