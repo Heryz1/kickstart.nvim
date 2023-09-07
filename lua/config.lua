@@ -18,7 +18,8 @@ vim.o.ignorecase = true -- Les recherches ne sont pas case sensitive
 vim.o.cursorline         = true -- Show the line where the cursor is
 vim.o.cursorcolumn       = true -- show the column where the cursor is
 vim.o.relativenumber     = true -- Show the relative line number next to the current line
-vim.o.cc                 = "100" -- set a colon border at 80
+vim.o.cc                 = "100" -- set a colon border at 100 characters
+vim.o.hlsearch           = 1 -- Set Highlight 
 
 -- Configure the characters used for end of line, tab and space
 vim.opt.listchars = {
@@ -28,6 +29,15 @@ vim.opt.listchars = {
   eol = '↴'
 }
 
+-- Remove r : We don't want to set comment at every CR
+-- Remove o : We don't want to set comment at every o or O
+-- Add a : To auto format comment paragraph. If error check "h auto-format"
+-- Delete a : It is very intrusive, and join lines to easily !
+-- Remove l : to Automatically format long lines 
+vim.opt.formatoptions = "jcql" -- Before the value was jcroql
+
+-- Set textwidth to 100
+vim.opt.textwidth = 100
 -- Help on other options
 -- 
 --

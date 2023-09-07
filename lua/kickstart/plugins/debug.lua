@@ -88,7 +88,7 @@ return {
     dap.adapters.lldb = {
       type = 'executable',
       -- absolute path is important here, otherwise the argument in the `runInTerminal` request will default to $CWD/lldb-vscode
-      command = '/usr/bin/lldb-vscode-14',
+      command = '/bin/lldb-vscode-11',
       name = "lldb"
     }
     dap.configurations.cpp = {
