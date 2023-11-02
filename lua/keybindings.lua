@@ -27,21 +27,6 @@ keymap('n', '<A-k>', 'ddkP', opts) -- Décaler des bloc de texte vers le bas/bas
 keymap('n', '<CR>', 'o<Esc>', opts) -- Combinaison clavier retour clavier
 keymap('n', '<A-CR>', 'O<Esc>', opts) -- Combinaison clavier retour clavier
 --
-keymap('n', 'cw', 'ciw', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-keymap('n', 'dw', 'diw', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-keymap('n', 'c"', 'ci"', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-keymap('n', 'd"', 'di"', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-keymap('n', 'c\'', 'ci\'', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-keymap('n', 'd\'', 'di\'', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-keymap('n', 'c{', 'ci{', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-keymap('n', 'd{', 'di{', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-keymap('n', 'c}', 'ci}', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-keymap('n', 'd}', 'di}', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-keymap('n', 'c(', 'ci(', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-keymap('n', 'd(', 'di(', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-keymap('n', 'c)', 'ci)', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-keymap('n', 'd)', 'di)', opts) -- copie de ciw dans cw car ca saoule de tapper le i
-
 -- Pour utiliser cette commande, il est nécessaire d'installer xclip (sudo apt install xclip)
 keymap('v', '<C-c>', '"+y', opts) -- Ajout du CTRL+C pour copier un fichier dans le buffer
 --
