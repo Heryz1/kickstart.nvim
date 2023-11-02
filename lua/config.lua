@@ -21,13 +21,18 @@ vim.o.relativenumber     = true -- Show the relative line number next to the cur
 vim.o.cc                 = "100" -- set a colon border at 100 characters
 vim.o.hlsearch           = 1 -- Set Highlight 
 
+-- Automatically reload file when externally updated
+vim.o.autoread = true
+
 -- Configure the characters used for end of line, tab and space
 vim.opt.listchars = {
-  tab = '·|',
+  tab 	= '--',
   trail = '·',
   space = '·',
-  eol = '↴'
+  eol 	= '↴'
 }
+-- Pour activer les listchars, il faut activer la list 
+vim.opt.list = true
 
 -- Remove r : We don't want to set comment at every CR
 -- Remove o : We don't want to set comment at every o or O
@@ -67,3 +72,6 @@ if is_wsl then
   }
 end
 
+
+-- Lexplorer configuration
+--
