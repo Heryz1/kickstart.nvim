@@ -4,6 +4,11 @@
 
 vim.o.ignorecase = true -- Les recherches ne sont pas case sensitive
 
+-- Gestion des tabulations 
+vim.o.shiftwidth = 4 -- La taille définit pour l'appui sur la touche tab est de 4 caractères
+vim.o.expandtab = 1 -- Utilisation d'espace au lieu des tabulations
+vim.o.tabstop = 4  -- La taille d'une tabulation est de 4 caractères
+
 -- vim.o.showmatch = true
 -- vim.o.autoindent = true -- use the identation of the previous line
 -- vim.o.number = true

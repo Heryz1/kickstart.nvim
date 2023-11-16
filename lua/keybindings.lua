@@ -51,9 +51,14 @@ keymap('i', '<C-BS>', '<esc>cvb', opts) -- En mode insertion, supprime le mot pr
 
 -- "cgete system()" is a synchronous command. It is better to use asynchronous command
 -- Add keybinding to call cmake when <F12> : Build cmake project and compile project 
-keymap('n', '<F12>', ':w<CR>:AsyncRun ./build.sh<CR>', opts)
-keymap('n', '<F11>', ':w<CR>:AsyncRun cmake --build bnative -j<CR>', opts)
+keymap('n', '<F9>', ':w<CR>:AsyncRun ./build.sh<CR>', opts)
+keymap('n', '<F10>', ':w<CR>:AsyncRun ./compile_run.sh<CR>', opts)
 
+keymap('n', '<Leader>cd', ':w<CR>:AsyncRun rm -rf build<CR>', opts)
+keymap('n', '<Leader>cc', ':w<CR>:AsyncRun cmake -B build<CR>', opts)
+keymap('n', '<Leader>cb', ':w<CR>:AsyncRun cmake --build build<CR>', opts)
+keymap('n', '<Leader>ct', ':w<CR>:AsyncRun (cd build && ctest)<CR>', opts)
+keymap('n', '<Leader>ca', ':w<CR>:AsyncRun rm -rf build && cmake -B build && cmake --build build<CR>', opts)
 -- Add keybinding to generate documentation automatically
 -- Not useful as friendly-snippet already has documentation snippets for C/CPP languages
 -- keymap('n', '<Leader>@', ':Neogen<CR>', opts)
