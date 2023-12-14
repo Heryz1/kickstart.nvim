@@ -24,6 +24,9 @@ return {
 			'skywind3000/asyncrun.vim',
 			-- opts = {},
 		},
+        {
+            'rust-lang/rust.vim',
+        },
 		-- {
 		-- 	"nvim-treesitter/nvim-treesitter-context",
 		-- 	event = "LazyFile",
