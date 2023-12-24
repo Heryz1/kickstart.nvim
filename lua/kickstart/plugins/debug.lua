@@ -88,7 +88,7 @@ return {
     dap.adapters.lldb = {
       type = 'executable',
       -- absolute path is important here, otherwise the argument in the `runInTerminal` request will default to $CWD/lldb-vscode
-      command = '/bin/lldb-vscode-11',
+      command = '/bin/lldb-vscode-14',
       name = "lldb"
     }
     dap.configurations.cpp = {
@@ -111,7 +111,18 @@ return {
         -- runInTerminal = true,
       },
     }
-
+    dap.configurations.rust = dap.configurations.cpp
+    -- dap.configurations.rust = {
+    -- {
+    --     name = "rust_launch",
+    --     type = "lldb",
+    --     request = "launch",
+    --     program = function()
+    --         return vim.fn.getcwd() .. "/target/debug/hello-world"
+    --     end,
+    --     cwd = "${workspaceFolder}",
+    --     stopOnEntry = false,
+    -- },
 
   end,
 }

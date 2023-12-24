@@ -65,3 +65,8 @@ keymap('n', '<Leader>ca', ':w<CR>:AsyncRun rm -rf build && cmake -B build && cma
 
 -- Escape from terminal mode 
 keymap('t', '<Esc>', '<C-\\><C-n>', opts)
+
+-- Handle quickFix list 
+keymap('n', '<Leader>q', ':copen<cr><C-W>k', opts)
+keymap('n', ']q', ':cn<cr>', opts)
+keymap('n', '[q', ':cp<cr>', opts)
