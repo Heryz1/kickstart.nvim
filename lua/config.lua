@@ -78,5 +78,3 @@ if is_wsl then
 end
 
 
--- Lexplorer configuration
---

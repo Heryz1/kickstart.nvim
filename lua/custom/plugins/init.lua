@@ -27,6 +27,9 @@ return {
         {
             'rust-lang/rust.vim',
         },
+        {
+            'Mofiqul/vscode.nvim',
+        },
 		-- {
 		-- 	"nvim-treesitter/nvim-treesitter-context",
 		-- 	event = "LazyFile",

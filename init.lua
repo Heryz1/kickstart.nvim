@@ -380,6 +380,7 @@ vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc
 vim.keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = '[S]earch [R]esume' })
+vim.keymap.set('n', '<leader>r', require('telescope.builtin').resume, { desc = '[R]esume' })
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
@@ -615,21 +616,25 @@ cmp.setup {
   },
 }
 
--- require'treesitter-context'.setup{
---   enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
---   max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
---   min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
---   line_numbers = true,
---   multiline_threshold = 20, -- Maximum number of lines to show for a single context
---   trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
---   mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
---   -- Separator between context and content. Should be a single character string, like '-'.
---   -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
---   separator = nil,
---   zindex = 20, -- The Z-index of the context window
---   on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+-- require('lspconfig')['clangd'].setup {
+--      capabilities = capabilities,
+--      cmd = {'clangd',  '--query-driver=/usr/local/bin/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-*', '--background-index', '--log=verbose', '--clang-tidy'}
 -- }
-
+-- , '--query-driver="/usr/local/bin/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-*"'
+require'treesitter-context'.setup{
+  enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+  max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+  min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+  line_numbers = true,
+  multiline_threshold = 20, -- Maximum number of lines to show for a single context
+  trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+  mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
+  -- Separator between context and content. Should be a single character string, like '-'.
+  -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+  separator = nil,
+  zindex = 20, -- The Z-index of the context window
+  on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+}
 
 require'luasnip'.filetype_extend("cpp", {"cppdoc"})
 require'luasnip'.filetype_extend("c", {"cdoc"})

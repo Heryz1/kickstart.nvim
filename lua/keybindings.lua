@@ -70,3 +70,7 @@ keymap('t', '<Esc>', '<C-\\><C-n>', opts)
 keymap('n', '<Leader>q', ':copen<cr><C-W>k', opts)
 keymap('n', ']q', ':cn<cr>', opts)
 keymap('n', '[q', ':cp<cr>', opts)
+
+vim.keymap.set('n', '<leader>db', ':bn<cr>:bd #<cr>', { desc = '[D]elete [B]uffer' })
+vim.keymap.set('n', ']q', ':cn<cr>', { desc = '[Q]uickFix next element' })
+vim.keymap.set('n', '[q', ':cn<cr>', { desc = '[Q]uickFix previous element' })
