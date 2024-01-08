@@ -156,10 +156,10 @@ require('lazy').setup({
   {
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
+    -- priority = 1000,
+    -- config = function()
+    --   vim.cmd.colorscheme 'onedark'
+    -- end,
   },
 
   {
@@ -181,7 +181,7 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help ibl`
-    -- main = 'ibl',
+    main = 'ibl',
     branch = 'master',
     opts = {},
   },
@@ -215,7 +215,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
-	-- 'nvim-treesitter/nvim-treesitter-context',
+	'nvim-treesitter/nvim-treesitter-context',
     },
     build = ':TSUpdate',
   },
