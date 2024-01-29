@@ -22,9 +22,11 @@ vim.o.tabstop = 4  -- La taille d'une tabulation est de 4 caractères
 -- vim.o.wildmenu = true -- Allow to autocomplet
 vim.o.cursorline         = true -- Show the line where the cursor is
 vim.o.cursorcolumn       = true -- show the column where the cursor is
-vim.o.relativenumber     = true -- Show the relative line number next to the current line
+-- vim.o.relativenumber     = true -- Show the relative line number next to the current line
 vim.o.cc                 = "100" -- set a colon border at 100 characters
 vim.o.hlsearch           = 1 -- Set Highlight 
+
+vim.o.nowrap = 1 -- Faire en sorte que les lignes dépassent de l'écran plutôt qu'elles reviennent au début de la ligne suivante
 
 -- Automatically reload file when externally updated
 vim.o.autoread = true
