@@ -79,3 +79,7 @@ vim.keymap.set('n', '[q', ':cn<cr>', { desc = '[Q]uickFix previous element' })
 keymap('n', '<Leader>q', ':copen<cr><C-W>k', opts)
 keymap('n', ']q', ':cn<cr>', opts)
 keymap('n', '[q', ':cp<cr>', opts)
+
+-- Keymap do generate documentation of the symbol at line 
+vim.keymap.set('n', '<Leader>gd', ':lua require(\'neogen\').generate()<CR>', { desc = '[G]enerate [D]ocumentation of the function at current line' })
+

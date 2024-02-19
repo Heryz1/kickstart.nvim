@@ -618,10 +618,11 @@ cmp.setup {
   },
 }
 
--- require('lspconfig')['clangd'].setup {
---      capabilities = capabilities,
---      cmd = {'clangd',  '--query-driver=/usr/local/bin/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-*', '--background-index', '--log=verbose', '--clang-tidy'}
--- }
+require('lspconfig')['clangd'].setup {
+     capabilities = capabilities,
+     cmd = {'clangd', '--background-index', '--log=verbose', '--clang-tidy'}
+     -- cmd = {'clangd',  '--query-driver=/usr/local/bin/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-*', '--background-index', '--log=verbose', '--clang-tidy'}
+}
 -- , '--query-driver="/usr/local/bin/gcc-arm-none-eabi-10-2020-q4-major/bin/arm-none-eabi-*"'
 require'treesitter-context'.setup{
   enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
@@ -638,8 +639,8 @@ require'treesitter-context'.setup{
   on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
 }
 
-require'luasnip'.filetype_extend("cpp", {"cppdoc"})
-require'luasnip'.filetype_extend("c", {"cdoc"})
+-- require'luasnip'.filetype_extend("cpp", {"cppdoc"})
+-- require'luasnip'.filetype_extend("c", {"cdoc"})
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 

@@ -22,9 +22,11 @@ vim.o.tabstop = 4  -- La taille d'une tabulation est de 4 caractères
 -- vim.o.wildmenu = true -- Allow to autocomplet
 vim.o.cursorline         = true -- Show the line where the cursor is
 vim.o.cursorcolumn       = true -- show the column where the cursor is
-vim.o.relativenumber     = true -- Show the relative line number next to the current line
+-- vim.o.relativenumber     = true -- Show the relative line number next to the current line
 vim.o.cc                 = "100" -- set a colon border at 100 characters
 vim.o.hlsearch           = 1 -- Set Highlight 
+
+vim.o.nowrap = 1 -- Faire en sorte que les lignes dépassent de l'écran plutôt qu'elles reviennent au début de la ligne suivante
 
 -- Automatically reload file when externally updated
 vim.o.autoread = true
@@ -77,4 +79,30 @@ if is_wsl then
   }
 end
 
-
+-- _G.edit_selection_in_split = function()
+--     local start = vim.fn.getpos("'[")
+--     local stop = vim.fn.getpos("']")
+--     local current_buf = vim.api.nvim_get_current_buf()
+--     local text = vim.api.nvim_buf_get_text(0, start[2] - 1, start[3] - 1, stop[2] - 1, stop[3] - 1, {})
+--     local buf = vim.api.nvim_create_buf(false, true)
+--     vim.api.nvim_buf_set_text(buf, 0, 0, 0, 0, text)
+--
+--     vim.cmd.split()
+--     vim.api.nvim_set_current_buf(buf)
+--     local split_window = vim.api.nvim_get_current_win()
+--
+--     vim.api.nvim_create_autocmd("WinClosed", {
+--         pattern = tostring(split_window),
+--         callback = function()
+--             local new_text = vim.api.nvim_buf_get_text(buf, 0, 0, -1, -1, {})
+--             vim.api.nvim_buf_set_text(current_buf, start[2] - 1, start[3] - 1, stop[2] - 1, stop[3] - 1, new_text)
+--         end
+--     })
+-- end
+--
+-- local function edit_selection_in_split_operator()
+--     vim.opt.operatorfunc = "v:lua.edit_selection_in_split"
+--     return "g@"
+-- end
+--
+-- vim.keymap.set({ "n", "x" }, "gS", edit_selection_in_split_operator, { expr = true })
