@@ -39,6 +39,7 @@ keymap('n', '<C-a>', 'ggVG', opts) -- Ajout du control A pour selectionner l'ens
 keymap('n', '<Leader>v', 'viw', opts) -- Selectionne le mot complet
 keymap('n', '<Leader>V', 'viW', opts) -- Selectionne le grand mot complet
 keymap('v', '<Leader>f', '"1y:%s/<C-R>1//gc<Left><Left><Left>', opts) -- Prend le mot sélectionné et vient automatiquement lancer une rechercher/remplacer en le positionnant au bon endroit
+keymap('v', '//', 'y/\\V<C-R>=escape(@",\'/\')<CR><CR>', opts) -- Fait une recherche du pattern sélectionné
 --
 keymap('n', '<Leader>wz', '*#:setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr foldlevel=0 foldcolumn=2<CR>', opts) -- Fait une recherche du mot ou se trouve le curseur puis recherche directement le mot et fait un fold de tout ce qui n'est pas le mot
 keymap('n', '<Leader>Wz', 'viW*#:setlocal foldexpr=(getline(v:lnum)=~@/)?0:(getline(v:lnum-1)=~@/)\\|\\|(getline(v:lnum+1)=~@/)?1:2 foldmethod=expr foldlevel=0 foldcolumn=2<CR>', opts) -- Même chose mais en prenant un mot plus large.
@@ -53,6 +54,7 @@ keymap('i', '<C-BS>', '<esc>cvb', opts) -- En mode insertion, supprime le mot pr
 -- Add keybinding to call cmake when <F12> : Build cmake project and compile project 
 keymap('n', '<F9>', ':w<CR>:AsyncRun ./build.sh<CR>', opts)
 keymap('n', '<F10>', ':w<CR>:AsyncRun ./compile_run.sh<CR>', opts)
+keymap('n', '<F12>', ':w<CR>:AsyncRun cmake -B build && cmake --build build -j<CR>', opts)
 
 keymap('n', '<Leader>cd', ':w<CR>:AsyncRun rm -rf build<CR>', opts)
 keymap('n', '<Leader>cc', ':w<CR>:AsyncRun cmake -B build<CR>', opts)
